@@ -32,11 +32,12 @@ const useCountdown = (initialValue: number) => {
 };
 
 export function CountDown() {
-  const { count, resetCount } = useCountdown(10);
+  const { count, resetCount } = useCountdown(5);
   return (
     <View style={styles.container}>
       <Text style={styles.text}>{count}</Text>
       <Button title="Reset" onPress={resetCount} />
+      {count === 0 && <Text style={styles.text}>Time's up!</Text>}
     </View>
   );
 }
