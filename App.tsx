@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from "react-native";
 import { Counter } from "./src/components/Counter";
 import { SimpleCalculator } from "./src/components/SimpleCalculator";
 import { CountDown } from "./src/components/CountDown";
+import { Posts } from "./src/components/Posts";
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
         <Counter />
         <SimpleCalculator />
         <CountDown />
+        <Posts />
       </View>
       <StatusBar style="inverted" />
     </View>
@@ -27,6 +29,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     gap: 20,
+    paddingTop: 100,
   },
   text: {
     color: "red",
