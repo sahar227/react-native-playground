@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
 import { FlatList, StyleSheet, Text, View } from "react-native";
 
@@ -9,11 +10,11 @@ interface Post {
 }
 
 async function getPosts() {
-  const posts = await fetch("https://jsonplaceholder.typicode.com/posts").then(
-    (response) => response.json()
+  const { data } = await axios.get<Post[]>(
+    "https://jsonplaceholder.typicode.com/posts"
   );
 
-  return posts as Post[];
+  return data;
 }
 
 export function Posts() {
