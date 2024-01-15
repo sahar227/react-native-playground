@@ -1,6 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
 import { Counter } from "./src/components/Counter";
+import { SimpleCalculator } from "./src/components/SimpleCalculator";
 
 export default function App() {
   return (
@@ -10,6 +11,7 @@ export default function App() {
       </Text>
       <View style={styles.examplesContainer}>
         <Counter />
+        <SimpleCalculator />
       </View>
       <StatusBar style="inverted" />
     </View>
