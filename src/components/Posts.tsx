@@ -36,7 +36,7 @@ export function Posts() {
 
 const styles = StyleSheet.create({
   container: {
-    height: "60%",
+    height: 200,
   },
   list: {
     backgroundColor: "white",
