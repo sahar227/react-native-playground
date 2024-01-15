@@ -4,21 +4,26 @@ import { Counter } from "./src/components/Counter";
 import { SimpleCalculator } from "./src/components/SimpleCalculator";
 import { CountDown } from "./src/components/CountDown";
 import { Posts } from "./src/components/Posts";
+import { QueryClient, QueryClientProvider } from "react-query";
+
+const queryClient = new QueryClient();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>
-        Open up App.tsx to start working on your app!!!
-      </Text>
-      <View style={styles.examplesContainer}>
-        <Counter />
-        <SimpleCalculator />
-        <CountDown />
-        <Posts />
+    <QueryClientProvider client={queryClient}>
+      <View style={styles.container}>
+        <Text style={styles.text}>
+          Open up App.tsx to start working on your app!!!
+        </Text>
+        <View style={styles.examplesContainer}>
+          <Counter />
+          <SimpleCalculator />
+          <CountDown />
+          <Posts />
+        </View>
+        <StatusBar style="inverted" />
       </View>
-      <StatusBar style="inverted" />
-    </View>
+    </QueryClientProvider>
   );
 }
 

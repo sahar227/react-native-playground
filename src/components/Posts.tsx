@@ -1,6 +1,6 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
 import { FlatList, StyleSheet, Text, View } from "react-native";
+import { useQuery } from "react-query";
 
 interface Post {
   userId: number;
@@ -18,11 +18,9 @@ async function getPosts() {
 }
 
 export function Posts() {
-  const [posts, setPosts] = useState<Post[]>([]);
+  const { data: posts, isLoading } = useQuery("posts", getPosts);
 
-  useEffect(() => {
-    getPosts().then((posts) => setPosts(posts));
-  }, []);
+  if (isLoading) return <Text style={styles.text}>Loading...</Text>;
 
   return (
     <View style={styles.container}>
