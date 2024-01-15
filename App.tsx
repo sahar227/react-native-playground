@@ -1,5 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
+import { Counter } from "./src/components/Counter";
 
 export default function App() {
   return (
@@ -7,6 +8,9 @@ export default function App() {
       <Text style={styles.text}>
         Open up App.tsx to start working on your app!!!
       </Text>
+      <View style={styles.examplesContainer}>
+        <Counter />
+      </View>
       <StatusBar style="inverted" />
     </View>
   );
@@ -18,8 +22,12 @@ const styles = StyleSheet.create({
     backgroundColor: "#000",
     alignItems: "center",
     justifyContent: "center",
+    gap: 20,
   },
   text: {
     color: "red",
+  },
+  examplesContainer: {
+    gap: 20,
   },
 });
