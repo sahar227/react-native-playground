@@ -6,6 +6,7 @@ import { CountDown } from "./src/components/CountDown";
 import { Posts } from "./src/components/Posts";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { MyImage } from "./src/components/MyImage";
+import StoredValue from "./src/components/StoredValue";
 
 const queryClient = new QueryClient();
 
@@ -22,6 +23,7 @@ export default function App() {
           <CountDown />
           <Posts />
           <MyImage />
+          <StoredValue />
         </View>
         <StatusBar style="inverted" />
       </View>
