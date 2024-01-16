@@ -6,7 +6,10 @@ import { CountDown } from "./src/components/CountDown";
 import { Posts } from "./src/components/Posts";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { MyImage } from "./src/components/MyImage";
-import StoredValue from "./src/components/StoredValue";
+import StoredValue, {
+  StoredValueWithJotai,
+} from "./src/components/StoredValue";
+import { Suspense } from "react";
 
 const queryClient = new QueryClient();
 
@@ -24,6 +27,9 @@ export default function App() {
           <Posts />
           <MyImage />
           <StoredValue />
+          <Suspense fallback={<Text style={{ color: "red" }}>Loading...</Text>}>
+            <StoredValueWithJotai />
+          </Suspense>
         </View>
         <StatusBar style="inverted" />
       </View>
