@@ -10,6 +10,7 @@ import StoredValue, {
   StoredValueWithJotai,
 } from "./src/components/StoredValue";
 import { Suspense } from "react";
+import { MyText } from "./src/components/MyText";
 
 const queryClient = new QueryClient();
 
@@ -30,6 +31,13 @@ export default function App() {
           <Suspense fallback={<Text style={{ color: "red" }}>Loading...</Text>}>
             <StoredValueWithJotai />
           </Suspense>
+          <MyText
+            textStyle={{
+              backgroundColor: "white",
+              height: 50,
+              textAlign: "center",
+            }}
+          />
         </View>
         <StatusBar style="inverted" />
       </View>
