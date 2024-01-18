@@ -11,6 +11,7 @@ import StoredValue, {
 } from "./src/components/StoredValue";
 import { Suspense } from "react";
 import { MyText } from "./src/components/MyText";
+import TailwindExample from "./src/components/TailwindExample";
 
 const queryClient = new QueryClient();
 
@@ -25,7 +26,7 @@ export default function App() {
           <Counter />
           <SimpleCalculator />
           <CountDown />
-          <Posts />
+          {/* <Posts /> */}
           <MyImage />
           <StoredValue />
           <Suspense fallback={<Text style={{ color: "red" }}>Loading...</Text>}>
@@ -38,6 +39,7 @@ export default function App() {
               textAlign: "center",
             }}
           />
+          <TailwindExample />
         </View>
         <StatusBar style="inverted" />
       </View>
