@@ -1,5 +1,6 @@
 {
   "expo": {
+    "scheme": "react-native-playground",
     "name": "react-native-playground",
     "slug": "react-native-playground",
     "version": "1.0.0",
@@ -25,6 +26,9 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      "expo-router"
+    ]
   }
 }
