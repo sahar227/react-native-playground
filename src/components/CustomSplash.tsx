@@ -2,6 +2,7 @@ import { SplashScreen } from "expo-router";
 import React, { useEffect } from "react";
 import { Text, View } from "react-native";
 import { Counter } from "./Counter";
+import { AnimatedBox } from "./AnimatedBox";
 
 // Instruct SplashScreen not to hide yet, we want to do this manually
 SplashScreen.preventAutoHideAsync();
@@ -35,6 +36,7 @@ export function CustomSplash(props: Props) {
     <View className="items-center justify-center">
       <Text>Custom Splash!!!</Text>
       <Counter />
+      <AnimatedBox />
     </View>
   );
 }
