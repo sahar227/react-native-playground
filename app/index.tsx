@@ -6,7 +6,7 @@ export default function Page() {
   return (
     <>
       <View className="flex flex-row justify-center">
-        <Link className="p-10 text-red-500 bg-slate-200" href="/calculator">
+        {/* <Link className="p-10 text-red-500 bg-slate-200" href="/calculator">
           Calculator
         </Link>
         <Link className="p-10 text-red-500 bg-slate-200" href="/message/aaa">
@@ -14,7 +14,7 @@ export default function Page() {
         </Link>
         <Link className="p-10 text-red-500 bg-slate-200" href="/message/">
           My Message
-        </Link>
+        </Link> */}
         <Link className="p-10 text-red-500 bg-slate-200" href="/camera">
           Camera
         </Link>

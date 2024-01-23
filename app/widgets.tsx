@@ -6,7 +6,7 @@ export default function page() {
   return (
     <View className="items-center justify-center flex-1">
       <WidgetPreview
-        renderWidget={() => <HelloWidget />}
+        renderWidget={() => <HelloWidget clickCount={3} />}
         height={200}
         width={320}
       />

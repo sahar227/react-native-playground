@@ -14,7 +14,7 @@ export async function widgetTaskHandler(props: WidgetTaskHandlerProps) {
 
   switch (props.widgetAction) {
     case "WIDGET_ADDED":
-      props.renderWidget(<Widget />);
+      props.renderWidget(<Widget clickCount={0} />);
       break;
 
     case "WIDGET_UPDATE":
@@ -30,7 +30,10 @@ export async function widgetTaskHandler(props: WidgetTaskHandlerProps) {
       break;
 
     case "WIDGET_CLICK":
-      // Not needed for now
+      if (props.clickAction === "COUNT_CLICKS") {
+        const clickCount = (props?.clickActionData?.clickCount as number) ?? 0;
+        props.renderWidget(<Widget clickCount={clickCount + 1} />);
+      }
       break;
 
     default:
