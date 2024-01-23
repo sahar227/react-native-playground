@@ -14,7 +14,7 @@ export function HelloWidget() {
       }}
     >
       <TextWidget
-        text="Hello"
+        text="Hello222"
         style={{
           fontSize: 32,
           fontFamily: "Inter",
