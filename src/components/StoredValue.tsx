@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { Button, Text } from "react-native";
 import { RESET, atomWithStorage, createJSONStorage } from "jotai/utils";
 import { useAtom } from "jotai";
+import { requestWidgetUpdate } from "react-native-android-widget";
+import { HelloWidget } from "../widgets/HelloWidget";
 
 const key = "storedValue";
 
@@ -22,6 +24,12 @@ export default function StoredValue() {
 
   async function increment() {
     setValue((prev) => prev + 1);
+    requestWidgetUpdate({
+      widgetName: "Hello",
+      renderWidget: () => (
+        <HelloWidget clickCount={value + 1} storedValue={null} />
+      ),
+    });
     await AsyncStorage.setItem(key, value.toString());
   }
   return <Button title={`StoredValue -  ${value}`} onPress={increment} />;
