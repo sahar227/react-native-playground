@@ -18,6 +18,10 @@ export default function Page() {
         <Link className="p-10 text-red-500 bg-slate-200" href="/camera">
           Camera
         </Link>
+
+        <Link className="p-10 text-red-500 bg-slate-200" href="/widgets">
+          Widgets Preview
+        </Link>
       </View>
 
       <App />
