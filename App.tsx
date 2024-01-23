@@ -22,22 +22,22 @@ export default function App() {
           Open up App.tsx to start working on your app!!!
         </Text>
         <View style={styles.examplesContainer}>
-          <Counter />
+          {/* <Counter />
           <SimpleCalculator />
           <CountDown />
-          <MyImage />
+          <MyImage /> */}
           <StoredValue />
           <Suspense fallback={<Text style={{ color: "red" }}>Loading...</Text>}>
             <StoredValueWithJotai />
           </Suspense>
-          <MyText
+          {/* <MyText
             textStyle={{
               backgroundColor: "white",
               height: 50,
               textAlign: "center",
             }}
           />
-          <TailwindExample />
+          <TailwindExample /> */}
         </View>
         <StatusBar style="inverted" />
       </View>

@@ -1,6 +1,7 @@
 import React from "react";
 import type { WidgetTaskHandlerProps } from "react-native-android-widget";
 import { HelloWidget } from "./HelloWidget";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const nameToWidget = {
   // Hello will be the **name** with which we will reference our widget.
@@ -14,7 +15,8 @@ export async function widgetTaskHandler(props: WidgetTaskHandlerProps) {
 
   switch (props.widgetAction) {
     case "WIDGET_ADDED":
-      props.renderWidget(<Widget clickCount={0} />);
+      const value = await AsyncStorage.getItem("storedValue");
+      props.renderWidget(<Widget clickCount={0} storedValue={value} />);
       break;
 
     case "WIDGET_UPDATE":
@@ -32,7 +34,18 @@ export async function widgetTaskHandler(props: WidgetTaskHandlerProps) {
     case "WIDGET_CLICK":
       if (props.clickAction === "COUNT_CLICKS") {
         const clickCount = (props?.clickActionData?.clickCount as number) ?? 0;
-        props.renderWidget(<Widget clickCount={clickCount + 1} />);
+        const value = await AsyncStorage.getItem("storedValue");
+
+        props.renderWidget(
+          <Widget clickCount={clickCount + 1} storedValue={value} />
+        );
+      }
+      if (props.clickAction === "WIDGET_REFRESH") {
+        const clickCount = (props?.clickActionData?.clickCount as number) ?? 0;
+        const value = await AsyncStorage.getItem("storedValue");
+        props.renderWidget(
+          <Widget clickCount={clickCount} storedValue={value} />
+        );
       }
       break;
 

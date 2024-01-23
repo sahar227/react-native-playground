@@ -3,9 +3,13 @@ import { FlexWidget, TextWidget } from "react-native-android-widget";
 
 interface HelloWidgetProps {
   clickCount: number;
+  storedValue: string | null;
 }
 
-export function HelloWidget(props: HelloWidgetProps) {
+export function HelloWidget({
+  clickCount,
+  storedValue = null,
+}: HelloWidgetProps) {
   return (
     <FlexWidget
       style={{
@@ -18,22 +22,32 @@ export function HelloWidget(props: HelloWidgetProps) {
       }}
     >
       <TextWidget
-        text={`Hello, clicked ${props.clickCount} times!`}
+        text={`Hello, clicked ${clickCount} times!`}
         style={{
           fontSize: 32,
           fontFamily: "Inter",
           color: "#000000",
         }}
         clickAction="COUNT_CLICKS"
-        clickActionData={{ clickCount: props.clickCount }}
+        clickActionData={{ clickCount: clickCount }}
       />
       <TextWidget
-        text={`It was clicked ${props.clickCount} times!`}
+        text={`stored ${storedValue ?? "NAN"}`}
         style={{
           fontSize: 32,
           fontFamily: "Inter",
           color: "#000000",
         }}
+      />
+      <TextWidget
+        text={`Refresh`}
+        style={{
+          fontSize: 12,
+          fontFamily: "Inter",
+          color: "#000000",
+        }}
+        clickAction="WIDGET_REFRESH"
+        clickActionData={{ clickCount: clickCount }}
       />
     </FlexWidget>
   );
