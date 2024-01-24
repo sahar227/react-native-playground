@@ -1,6 +1,7 @@
 import { Link } from "expo-router";
 import App from "../App";
 import { View } from "react-native";
+import { Auth } from "../src/components/Auth";
 
 export default function Page() {
   return (
@@ -23,7 +24,7 @@ export default function Page() {
           Widgets Preview
         </Link>
       </View>
-
+      <Auth />
       <App />
     </>
   );
