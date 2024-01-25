@@ -2,6 +2,7 @@ import { Link } from "expo-router";
 import App from "../App";
 import { View } from "react-native";
 import { Auth } from "../src/components/Auth";
+import AuthFireBase from "../src/components/AuthFireBase";
 
 export default function Page() {
   return (
@@ -25,6 +26,7 @@ export default function Page() {
         </Link>
       </View>
       <Auth />
+      <AuthFireBase />
       <App />
     </>
   );
