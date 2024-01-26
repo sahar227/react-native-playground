@@ -5,7 +5,6 @@ import {
   GithubAuthProvider,
   User,
   signInWithCredential,
-  signInWithPopup,
   signOut,
 } from "firebase/auth";
 import { makeRedirectUri, useAuthRequest } from "expo-auth-session";
@@ -44,7 +43,7 @@ async function createTokenWithCode(code: string) {
 const AuthFireBase = () => {
   const [user, setUser] = React.useState<User | null>(null);
 
-  const [request, response, promptAsync] = useAuthRequest(
+  const [_, response, promptAsync] = useAuthRequest(
     {
       clientId: clientID,
       scopes: ["identity", "user:email"],
